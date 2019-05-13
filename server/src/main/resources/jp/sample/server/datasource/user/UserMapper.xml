@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.sample.server.datasource.user.UserMapper">
+
+    <resultMap id="user" type="jp.sample.server.model.user.User">
+        <id property="id.value" column="id" />
+        <result property="name.value" column="name" />
+    </resultMap>
+
+    <select id="listAll" resultMap="user">
+        SELECT
+            id,
+            name
+        FROM
+            users
+        ORDER BY id
+    </select>
+
+    <select id="findById" resultMap="user">
+        SELECT
+            id,
+            name
+        FROM
+            users
+        WHERE id = #{userId.value}
+    </select>
+
+    <insert id="register">
+        INSERT INTO users (
+            name
+        )
+        VALUES (
+            #{userName.value}
+        )
+    </insert>
+
+    <update id="modify">
+        UPDATE users SET
+            name = #{userName.value}
+        WHERE id = #{userId.value}
+    </update>
+
+</mapper>
