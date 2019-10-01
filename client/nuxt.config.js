@@ -29,7 +29,8 @@ module.exports = {
   */
   css: [
     '@fortawesome/fontawesome-free/css/all.css',
-    '~/assets/sass/app.scss'
+    // プロジェクト内の CSS ファイル
+    '@/assets/css/app.scss'
   ],
 
   /*

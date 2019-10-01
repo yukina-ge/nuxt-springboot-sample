@@ -4,5 +4,6 @@ spring:
     driverClassName: org.h2.Driver
     username: sa
     password:
+    sql-script-encoding: UTF-8
   h2:
     console.enabled: true
